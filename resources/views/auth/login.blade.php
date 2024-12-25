@@ -10,7 +10,7 @@
     <!-- Fav Icon  -->
     {{-- <link rel="shortcut icon" href="./images/favicon.png"> --}}
     <!-- Page Title  -->
-    <title>Login | Aini Swalayan</title>
+    <title>Login | Batik Wistara</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{ asset('assets/css/dashlite.css?ver=2.4.0') }}">
     <link id="skin-default" rel="stylesheet" href="{{ asset('assets/css/theme.css?ver=2.4.0') }}">
@@ -29,7 +29,7 @@
                             <div class="card-inner card-inner-lg">
                                 <div class="nk-block-head">
                                     <div class="nk-block-head-content">
-                                        <h4 class="nk-block-title">Aini Swalayan</h4>
+                                        <h4 class="nk-block-title">Batik Wistara</h4>
                                         <div class="nk-block-des">
                                             <p></p>
                                         </div>
@@ -87,7 +87,7 @@
 
                                 <div class="col-lg-6">
                                     <div class="nk-block-content text-center text-lg-left">
-                                        <p class="text-soft">&copy; 2024 Aini Swalayan</p>
+                                        <p class="text-soft">&copy; 2024 Batik Wistara</p>
                                     </div>
                                 </div>
                             </div>
