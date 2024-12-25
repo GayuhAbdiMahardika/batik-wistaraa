@@ -65,7 +65,7 @@
         </div>
         <div class="row" style="margin-top:40px">
             <div class="col-md-6">
-                <a href="{{ route('produk') }}"class="btn btn-md btn-primary"><em class="icon ni ni-plus"></em>Produk</span></a>
+                <a href="{{ route('produk') }}"class="btn btn-md btn-primary"><em class="icon ni ni-plus"></em>Motif Batik</span></a>
                 <a href="{{ route('reset') }}" class="btn btn-md btn-secondary" style="margin: 0 10px"><em class="icon ni ni-reload"></em><span>Reset</span></a>
                 <button type="submit" class="btn btn-md btn-success"><em class="icon ni ni-check-thick"></em><span>Simpan</span></button>
             </div>
@@ -81,7 +81,7 @@
                         <tr>
                             <th style="width: 5%">No</th>
                             <th style="width: 5%">Action</th>
-                            <th style="width: 20%">Nama Produk</th>
+                            <th style="width: 20%">Motif Batik</th>
                             <th style="width: 5%">Jumlah</th>
                             <th style="width: 13%">Harga</th>
                             <th style="width: 13%">Total</th>

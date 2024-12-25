@@ -10,7 +10,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="{{ asset('assets/img/logo.png') }}">
     <!-- Page Title  -->
-    <title>Aini Swalayan</title>
+    <title>Batik Wistara</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{ asset('assets/css/dashlite.css?ver=2.4.0') }}">
     <link id="skin-default" rel="stylesheet" href="{{ asset('assets/css/theme.css?ver=2.4.0') }}">
@@ -103,7 +103,7 @@
                                     <img class="logo-light logo-img" src="{{ asset('assets/img/logo2.png') }}" alt="logo">
                                 </div>
                                 <div class="nk-header-app-info">
-                                    <span class="sub-text">Aini Swalayan</span>
+                                    <span class="sub-text">Website Batik Wistara</span>
                                     <span class="lead-text">Dashboard</span>
                                 </div>
                             </div>
@@ -442,7 +442,7 @@
                             <li class="nk-menu-item">
                                 <a href="{{ route('barang.show') }}" class="nk-menu-link">
                                     <span class="nk-menu-icon"><em class="icon ni ni-property-blank"></em></span>
-                                    <span class="nk-menu-text">Data Barang</span>
+                                    <span class="nk-menu-text">Stok Batik</span>
                                 </a>
                             </li><!-- .nk-menu-item -->
                             <li class="nk-menu-item">

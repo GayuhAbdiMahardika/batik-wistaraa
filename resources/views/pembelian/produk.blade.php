@@ -8,7 +8,7 @@
             {{ session('error') }}
         </div>
     @endif
-    <h4 class="text-center">Produk</h4>
+    <h4 class="text-center">Motif Batik</h4>
     <div class="card card-preview" style="margin-top:30px">
         <div class="card-inner">
             <table class="datatable-init nk-tb-list nk-tb-ulist" data-auto-responsive="false">
@@ -21,7 +21,7 @@
                             </div> --}}
                             &nbsp;
                         </th>
-                        <th class="nk-tb-col"><span class="sub-text">Nama Barang</span></th>
+                        <th class="nk-tb-col"><span class="sub-text">Motif Batik</span></th>
                         <th class="nk-tb-col tb-col-mb"><span class="sub-text">Stok</span></th>
                         <th class="nk-tb-col tb-col-md"><span class="sub-text">Harga</span></th>
                     </tr>

@@ -9,9 +9,9 @@
                 <div class="nk-block-head nk-block-head-sm">
                     <div class="nk-block-between">
                         <div class="nk-block-head-content">
-                            <h3 class="nk-block-title page-title">Aini Swalayan Website</h3>
+                            <h3 class="nk-block-title page-title">Batik Wistara</h3>
                             <div class="nk-block-des text-soft">
-                                <p>Selamat Datang <b>{{ Auth::user()->name }}</b>, di Website Aini Swalayan</p>
+                                <p>Selamat Datang <b>{{ Auth::user()->name }}</b>, di Batik Wistara</p>
                             </div>
                         </div><!-- .nk-block-head-content -->
                         <div class="nk-block-head-content">
@@ -54,7 +54,7 @@
                                 <div class="card-inner">
                                     <div class="card-title-group">
                                         <div class="card-title card-title-sm">
-                                            <h6 class="title">Statistik 10 Barang Terlaris</h6>
+                                            <h6 class="title">Statistik 10 Motif Batik Terlaris</h6>
                                         </div>
                                         <div class="card-tools shrink-0 d-none d-sm-block">
                                             <ul class="nav nav-switch-s2 nav-tabs bg-white">
@@ -66,7 +66,7 @@
                                         <canvas class="pie-chart" id="pieChartData-PenjualanDashboard"></canvas>
                                     </div>
                                     <div class="mt-4">
-                                        <h6 class="title">Detail Barang Terlaris</h6>
+                                        <h6 class="title">Detail Motif Batik Terlaris</h6>
                                         <ul>
                                             @foreach($topSellingItems as $item)
                                                 <li>{{ $item->barang->nama_barang ?? 'Nama Barang Tidak Ditemukan' }}: {{ $item->total }} terjual</li>

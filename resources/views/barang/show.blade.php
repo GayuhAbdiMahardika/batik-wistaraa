@@ -3,9 +3,9 @@
 @section('content')
     <div class="container mt-5">
         <div class="d-flex align-items-center justify-content-between mb-4">
-            <h4 class="text-primary">Data Barang</h4>
+            <h4 class="text-primary">Stok Batik</h4>
             <div class="ms-auto">
-                <a class="btn btn-success" href="{{ route('barang.create') }}">Tambah Barang</a>
+                <a class="btn btn-success" href="{{ route('barang.create') }}">Tambah Motif Batik</a>
             </div>
         </div>
 
@@ -15,7 +15,7 @@
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">No</th>
-                            <th scope="col">Nama Barang</th>
+                            <th scope="col">Motif Batik</th>
                             <th scope="col">Stok</th>
                             <th scope="col">Harga</th>
                             <th scope="col">Aksi</th>
