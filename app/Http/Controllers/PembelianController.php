@@ -44,7 +44,7 @@ class PembelianController extends Controller
                 'harga' => $product->harga,
                 'total' => $product->harga,
                 'margin' => 10,
-                'harga_jual' => 10 * $product->harga / 100 + $product->harga,
+                'harga_jual' => $product->harga + ($product->harga * 10 / 100),
             ]);
             return response()->json(['success' => 'Product added to session']);
         }
@@ -79,15 +79,15 @@ class PembelianController extends Controller
                 $cart[$key]['total'] = $request->jumlah * $cart[$key]['harga'];
                 session()->put('cart_beli', $cart);
                 return response()->json(['success' => 'Product updated in session']);
-            }elseif($request->harga > 0 && $request->harga != $item['harga'] && $item['id'] == $request->id){
+            } elseif ($request->harga > 0 && $request->harga != $item['harga'] && $item['id'] == $request->id) {
                 $cart[$key]['harga'] = $request->harga;
                 $cart[$key]['total'] = $cart[$key]['jumlah'] * $request->harga;
-                $cart[$key]['harga_jual'] = $cart[$key]['margin'] * $request->harga / 100 + $request->harga;
+                $cart[$key]['harga_jual'] = $request->harga + ($request->harga * $cart[$key]['margin'] / 100);
                 session()->put('cart_beli', $cart);
                 return response()->json(['success' => 'Product updated in session']);
-            }elseif($request->margin > 0 && $request->margin != $item['margin'] && $item['id'] == $request->id){
+            } elseif ($request->margin > 0 && $request->margin != $item['margin'] && $item['id'] == $request->id) {
                 $cart[$key]['margin'] = $request->margin;
-                $cart[$key]['harga_jual'] = $request->margin * $cart[$key]['harga'] / 100 + $cart[$key]['harga'];
+                $cart[$key]['harga_jual'] = $cart[$key]['harga'] + ($cart[$key]['harga'] * $request->margin / 100);
                 session()->put('cart_beli', $cart);
                 return response()->json(['success' => 'Product updated in session']);
             }

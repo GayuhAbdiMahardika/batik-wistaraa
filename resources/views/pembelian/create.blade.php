@@ -112,7 +112,7 @@
                                     </div>
                                 </div>
                             </td>
-                            <td>{{ number_format($item['harga'], 2, ',', '.') }}</td>
+                            <td>{{ number_format($item['harga_jual'], 2, ',', '.') }}</td>
                         </tr>
                     @endforeach
                     </tbody>
