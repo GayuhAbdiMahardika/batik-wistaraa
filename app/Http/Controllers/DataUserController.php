@@ -21,7 +21,8 @@ class DataUserController extends Controller
 
     public function store(DataUserRequest $request)
     {
-        DataUser::create($request->validated());
+        $validated = $request->validated();
+        DataUser::create($validated);
         return redirect()->route('datauser.index')->with('success', 'User berhasil ditambahkan');
     }
 
