@@ -27,9 +27,16 @@ class BarangController extends Controller
             'nama_barang' => 'required|string|max:255',
             'harga' => 'required|numeric',
             'stok' => 'required|integer',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        Barang::create($request->only(['nama_barang', 'harga', 'stok'])); // Menyimpan data ke tabel
+        $path = $request->file('gambar')->store('images', 'public');
+        Barang::create([
+            'nama_barang' => $request->nama_barang,
+            'harga' => $request->harga,
+            'stok' => $request->stok,
+            'gambar' => $path,
+        ]); // Menyimpan data ke tabel
         return redirect()->route('barang.show')->with('success', 'Barang berhasil ditambahkan.');
     }
 
@@ -37,6 +44,7 @@ class BarangController extends Controller
     public function edit($id)
     {
         $barang = Barang::findOrFail($id); // Cari data berdasarkan ID
+        // var_dump($barang);die;
         return view('barang.edit', compact('barang')); // Kirim data ke view
     }
 
@@ -47,10 +55,16 @@ class BarangController extends Controller
             'nama_barang' => 'required|string|max:255',
             'harga' => 'required|numeric',
             'stok' => 'required|integer',
+            'gambar' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         $barang = Barang::findOrFail($id);
-        $barang->update($request->only(['nama_barang', 'harga', 'stok'])); // Update data
+        if ($request->hasFile('gambar')) {
+            $path = $request->file('gambar')->store('images', 'public');
+            $barang->update($request->only(['nama_barang', 'harga', 'stok']) + ['gambar' => $path]);
+        } else {
+            $barang->update($request->only(['nama_barang', 'harga', 'stok']));
+        }
         return redirect()->route('barang.show')->with('success', 'Barang berhasil diperbarui.');
     }
 

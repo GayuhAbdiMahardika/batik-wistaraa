@@ -16,6 +16,7 @@
                         <tr>
                             <th scope="col">No</th>
                             <th scope="col">Motif Batik</th>
+                            <th scope="col">Gambar</th>
                             <th scope="col">Stok</th>
                             <th scope="col">Harga</th>
                             <th scope="col">Aksi</th>
@@ -26,6 +27,7 @@
                         <tr>
                             <th scope="row">{{ $no + 1 }}</th>
                             <td>{{ $barang->nama_barang }}</td>
+                            <td><img src="{{ asset('storage/' . $barang->gambar) }}" alt="{{ $barang->nama_barang }}" width="100"></td>
                             <td>{{ $barang->stok }}</td>
                             <td>Rp {{ number_format($barang->harga, 0, ',', '.') }}</td>
                             <td>

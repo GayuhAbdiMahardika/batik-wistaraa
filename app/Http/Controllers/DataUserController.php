@@ -32,11 +32,25 @@ class DataUserController extends Controller
         return view('datauser.edit', compact('datauser'));
     }
 
-    public function update(DataUserRequest $request, $id)
+    public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $id,
+            'password' => 'nullable|string|min:8',
+            'role' => 'required|string',
+        ]);
+
         $datauser = DataUser::findOrFail($id);
-        $datauser->update($request->validated());
-        return redirect()->route('datauser.index')->with('success', 'User berhasil diupdate');
+        $datauser->name = $request->name;
+        $datauser->email = $request->email;
+        if ($request->filled('password')) {
+            $datauser->password = bcrypt($request->password);
+        }
+        $datauser->role = $request->role;
+        $datauser->save();
+
+        return redirect()->route('datauser.index')->with('success', 'User berhasil diperbarui.');
     }
 
     public function destroy($id)

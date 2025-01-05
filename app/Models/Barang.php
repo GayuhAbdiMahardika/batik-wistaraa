@@ -13,6 +13,6 @@ class Barang extends Model
 
     // Menambahkan properti fillable
     protected $fillable = [
-        'nama_barang', 'kategori', 'harga', 'stok'
+        'nama_barang', 'kategori', 'harga', 'stok','gambar'
     ];
 }

@@ -33,14 +33,23 @@
             <div class="form-group">
                 <label for="name">Nama</label>
                 <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
+                @if ($errors->has('name'))
+                    <span class="text-danger">{{ $errors->first('name') }}</span>
+                @endif
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
+                @if ($errors->has('email'))
+                    <span class="text-danger">{{ $errors->first('email') }}</span>
+                @endif
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" class="form-control" id="password" name="password" required>
+                @if ($errors->has('password'))
+                    <span class="text-danger">{{ $errors->first('password') }}</span>
+                @endif
             </div>
             <div class="form-group">
                 <label for="role">Role</label>
@@ -49,6 +58,9 @@
                     <option value="kasir" {{ old('role') == 'kasir' ? 'selected' : '' }}>Kasir</option>
                     <option value="manager" {{ old('role') == 'manager' ? 'selected' : '' }}>Manager</option>
                 </select>
+                @if ($errors->has('role'))
+                    <span class="text-danger">{{ $errors->first('role') }}</span>
+                @endif
             </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
         </form>
