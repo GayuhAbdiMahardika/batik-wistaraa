@@ -22,6 +22,7 @@ class DataUserController extends Controller
     public function store(DataUserRequest $request)
     {
         $validated = $request->validated();
+        $validated['password'] = bcrypt($validated['password']);
         DataUser::create($validated);
         return redirect()->route('datauser.index')->with('success', 'User berhasil ditambahkan');
     }

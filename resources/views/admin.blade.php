@@ -427,67 +427,122 @@
                 <div class="nk-sidebar" data-content="sidebarMenu">
                     <div class="nk-sidebar-inner" data-simplebar>
                         <ul class="nk-menu nk-menu-md">
-                            <li class="nk-menu-heading">
-                                <h6 class="overline-title text-primary-alt">Dashboards</h6>
-                            </li><!-- .nk-menu-heading -->
-                            <li class="nk-menu-item">
-                                <a href="/" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-dashboard"></em></span>
-                                    <span class="nk-menu-text">Default Dashboard</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-heading">
-                                <h6 class="overline-title text-primary-alt">Inventory</h6>
-                            </li><!-- .nk-menu-heading -->
-                            <li class="nk-menu-item">
-                                <a href="{{ route('barang.show') }}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-property-blank"></em></span>
-                                    <span class="nk-menu-text">Stok Batik</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item">
-                                <a href="{{ route('supplier.tampil') }}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-truck"></em></span>
-                                    <span class="nk-menu-text">Data Supplier</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item">
-                                <a href="{{ route('beli') }}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-bag"></em></span>
-                                    <span class="nk-menu-text">Pembelian</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item">
-                                <a href="{{ route('laporan.pembelian') }}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-file-docs"></em></span>
-                                    <span class="nk-menu-text">Laporan Pembelian</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-heading">
-                                <h6 class="overline-title text-primary-alt">Penjualan</h6>
-                            </li><!-- .nk-menu-heading -->
-                            <li class="nk-menu-item">
-                                <a href="{{ route('jual') }}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-tranx"></em></span>
-                                    <span class="nk-menu-text">Penjualan</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item">
-                                <a href="{{ route('laporan.penjualan') }}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-file-docs"></em></span>
-                                    <span class="nk-menu-text">Laporan Penjualan</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-heading">
-                                <h6 class="overline-title text-primary-alt">SDM</h6>
-                            </li><!-- .nk-menu-heading -->
-                            <li class="nk-menu-item">
-                                <a href="{{ route('datauser.index') }}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
-                                    <span class="nk-menu-text">Data User</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
-                        </ul><!-- .nk-menu -->
+                            @if(Auth::user()->role == 'admin')
+                                <li class="nk-menu-heading">
+                                    <h6 class="overline-title text-primary-alt">Dashboards</h6>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="/" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-dashboard"></em></span>
+                                        <span class="nk-menu-text">Default Dashboard</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-heading">
+                                    <h6 class="overline-title text-primary-alt">Inventory</h6>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('barang.show') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-property-blank"></em></span>
+                                        <span class="nk-menu-text">Stok Batik</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('supplier.tampil') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-truck"></em></span>
+                                        <span class="nk-menu-text">Data Supplier</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('beli') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-bag"></em></span>
+                                        <span class="nk-menu-text">Pembelian</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('laporan.pembelian') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-file-docs"></em></span>
+                                        <span class="nk-menu-text">Laporan Pembelian</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-heading">
+                                    <h6 class="overline-title text-primary-alt">Penjualan</h6>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('jual') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-tranx"></em></span>
+                                        <span class="nk-menu-text">Penjualan</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('laporan.penjualan') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-file-docs"></em></span>
+                                        <span class="nk-menu-text">Laporan Penjualan</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-heading">
+                                    <h6 class="overline-title text-primary-alt">SDM</h6>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('datauser.index') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
+                                        <span class="nk-menu-text">Data User</span>
+                                    </a>
+                                </li>
+                            @elseif(Auth::user()->role == 'kasir')
+                                <li class="nk-menu-heading">
+                                    <h6 class="overline-title text-primary-alt">Penjualan</h6>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('jual') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-tranx"></em></span>
+                                        <span class="nk-menu-text">Penjualan</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('laporan.penjualan') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-file-docs"></em></span>
+                                        <span class="nk-menu-text">Laporan Penjualan</span>
+                                    </a>
+                                </li>
+                            @elseif(Auth::user()->role == 'manager')
+                                <li class="nk-menu-heading">
+                                    <h6 class="overline-title text-primary-alt">Inventory</h6>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('barang.show') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-property-blank"></em></span>
+                                        <span class="nk-menu-text">Stok Batik</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('supplier.tampil') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-truck"></em></span>
+                                        <span class="nk-menu-text">Data Supplier</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('beli') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-bag"></em></span>
+                                        <span class="nk-menu-text">Pembelian</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('laporan.pembelian') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-file-docs"></em></span>
+                                        <span class="nk-menu-text">Laporan Pembelian</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-heading">
+                                    <h6 class="overline-title text-primary-alt">SDM</h6>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('datauser.index') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
+                                        <span class="nk-menu-text">Data User</span>
+                                    </a>
+                                </li>
+                            @endif
+                        </ul>
                     </div>
                 </div>
                 @yield('content')
